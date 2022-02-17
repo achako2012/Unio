@@ -39,7 +39,7 @@ let {src, dest} = require('gulp'),
     clean_css = require('gulp-clean-css'),
     webp = require('gulp-webp'),
     webphtml = require('gulp-webp-html'),
-    webpcss = require('gulp-webp-css'),
+    webpcss = require('gulp-webpcss'),
     svgSprite = require('gulp-svg-sprite')
 
 // Browser Sync

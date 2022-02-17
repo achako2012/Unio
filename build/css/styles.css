@@ -2,7 +2,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-
+div {
+  background: url("../img/download.jpeg") 0 0 no-repeat;
+}
 
 .container {
   max-width: 1351px;
@@ -34,38 +36,5 @@
     max-width: none;
   }
 }
-@supports (-webkit-appearance:none){
-div{background:url("../img/download.webp") 0 0 no-repeat}
-}
 
- @media (max-width: 1339.98px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 991.98px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 767.98px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
-
- @media (max-width: 479.98px){
-
-@supports (-webkit-appearance:none){
-
-}
-
-}
+.webp div { background: url(../img/download.webp) 0 0 no-repeat; }

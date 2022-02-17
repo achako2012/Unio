@@ -6,10 +6,6 @@ div {
   background: url("../img/download.jpeg") 0 0 no-repeat;
 }
 
-.webp div {
-  background: url("../img/download.webp") 0 0 no-repeat;
-}
-
 // Container
 .container {
   max-width: ($containerWidth+$containerPadding)+px;
