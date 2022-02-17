@@ -1,7 +1,9 @@
 // Global SCSS imports
 @import 'variables';
 @import 'global';
+@import 'reset';
 
 // Sections SCSS files import
 @import "./header";
+@import "./main";
 // @import "./footer";

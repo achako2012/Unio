@@ -2,10 +2,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-div {
-  background: url("../img/download.jpeg") 0 0 no-repeat;
-}
-
 // Container
 .container {
   max-width: ($containerWidth+$containerPadding)+px;
@@ -31,5 +27,22 @@ div {
   }
 }
 
+// Body
+body {
 
+  &.locked {
+    overflow: hidden;
+  }
+}
+
+// Animation
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
