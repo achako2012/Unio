@@ -1,7 +1,7 @@
 @use "sass:math";
 
 $containerWidth: 1261;
-$containerPadding: 90;
+$containerPadding: 40;
 
 $containerSidePadding: math.div($containerPadding, 2);
 $breakpoint1400: 1339.98+px;
@@ -14,5 +14,5 @@ $burgerBreakpoint: $breakpoint992;
 $burgerActiveColor: 'white';
 
 // Fonts
-$fontMain: sans-serif;
+$fontMain: Popins;
 $fontSecondary: '';
