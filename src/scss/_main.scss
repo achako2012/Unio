@@ -1,6 +1,4 @@
 .section {
-
-  // .section__main
   &__main {
     background: linear-gradient(90deg, #130645 0%,
             rgba(19, 6, 69, 0) 86.01%), url("../img/main_background.png") no-repeat;
@@ -26,8 +24,8 @@
 }
 
 .main {
+  padding-left: 12%;
 
-  // .main__title
   &__title {
     font-style: normal;
     font-weight: 600;

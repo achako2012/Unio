@@ -7,20 +7,23 @@ let path = {
         css: project_folder + '/css/',
         js: project_folder + '/js/',
         img: project_folder + '/img/',
-        fonts: project_folder + '/fonts/'
+        fonts: project_folder + '/fonts/',
+        svg: project_folder + '/img/icons/'
     },
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
         css: source_folder + '/scss/styles.scss',
         js: source_folder + '/js/scripts.js',
         img: source_folder + '/img/**/*.+(png|jpg|jpeg|gif|ico|svg|webp)',
-        fonts: source_folder + '/fonts/*.ttf'
+        fonts: source_folder + '/fonts/*.ttf',
+        svg: source_folder + '/img/icons/*.svg'
     },
     watch: {
         html: source_folder + '/**/*.html',
         css: source_folder + ['/scss/**/*.scss'],
         js: source_folder + '/js/**/*.js',
-        img: source_folder + '/img/**/*.+(png|jpg|jpeg|gif|ico|svg|webp)'
+        img: source_folder + '/img/**/*.+(png|jpg|jpeg|gif|ico|svg|webp)',
+        svg: source_folder + '/img/icons/*.svg'
     },
     clean: './' + project_folder + '/'
 }
@@ -38,7 +41,7 @@ let {src, dest} = require('gulp'),
     imagemin = require('gulp-imagemin'),
     clean_css = require('gulp-clean-css'),
     webp = require('gulp-webp'),
-    webphtml = require('gulp-webp-html'),
+    webphtml = require('gulp-webp-html-nosvg'),
     webpcss = require('gulp-webpcss'),
     svgSprite = require('gulp-svg-sprite')
 
@@ -110,7 +113,9 @@ function css() {
                 cascade: true,
             })
         )
-        .pipe(webpcss())
+        .pipe(webpcss(
+            {webpClass: '.webp', noWebpClass: '.no-webp'}
+        ))
         .pipe(dest(path.build.css))
         .pipe(clean_css())
         .pipe(
@@ -122,18 +127,18 @@ function css() {
         .pipe(browsersync.stream())
 }
 
-gulp.task('svgSprite', function () {
-    return gulp.src([source_folder + '/iconsprite/*.svg'])
+function svg() {
+    return src(path.src.svg)
         .pipe(svgSprite({
             mode: {
                 stack: {
-                    sprite: "../icons/icons.svg",
+                    sprite: "../icons.svg",
                     example: true
                 }
             }
         }))
-        .pipe(dest(path.build.img))
-})
+        .pipe(dest(path.build.svg))
+}
 
 // Watch files
 function watchFiles(params) {
@@ -141,6 +146,7 @@ function watchFiles(params) {
     gulp.watch([path.watch.css], css)
     gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.img], images)
+    gulp.watch([path.watch.svg], svg)
 }
 
 // Clean
@@ -148,9 +154,10 @@ function clean(params) {
     return del(path.clean)
 }
 
-let build = gulp.series(clean, gulp.parallel(css, html, js, images))
+let build = gulp.series(clean, gulp.parallel(css, html, js, images, svg))
 let watch = gulp.parallel(build, watchFiles, browserSync)
 
+exports.svg = svg;
 exports.images = images;
 exports.js = js;
 exports.html = html;
