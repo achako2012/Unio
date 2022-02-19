@@ -678,18 +678,45 @@ nav {
 
 .section__intouch {
   background: #130645;
-  padding-top: 105px;
+  padding-bottom: 50px;
 }
 
-.section__intouch .coin__img {
+.container .coin__img {
   position: relative;
-  width: 15%;
+  z-index: 0;
+  overflow: hidden !important;
 }
 
-.section__intouch .coin__img-1 {
-  transform: translate(50%, -60%);
-  top: -45em;
-  right: -60em;
+.container .coin__img-1 {
+  max-width: 210px;
+  max-height: 210px;
+  top: 200px;
+  left: 80%;
+}
+
+.container .coin__img-2 {
+  max-width: 150px;
+  max-height: 150px;
+  top: 450px;
+  left: 0;
+}
+
+.container .coin__img-3 {
+  max-height: 120px;
+  top: 500px;
+  right: 450px;
+}
+
+.container .coin__img-4 {
+  max-height: 120px;
+  top: 820px;
+  right: 400px;
+}
+
+.container .coin__img-5 {
+  max-height: 140px;
+  left: 30%;
+  top: 750px;
 }
 
 .intouch {
@@ -709,7 +736,8 @@ nav {
   margin-top: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 5em;
   width: 100%;
 }
 
@@ -860,6 +888,14 @@ footer .footer__privacy .center {
   }
 
   .help {
+    display: none;
+  }
+
+  .container .coin__img-2 {
+    display: none;
+  }
+
+  .container .coin__img-5 {
     display: none;
   }
 
@@ -1103,8 +1139,8 @@ footer .footer__privacy .center {
     gap: 0;
   }
 
-  .section__intouch {
-    padding-top: 25px;
+  .container .coin__img {
+    display: none;
   }
 
   .intouch__social {

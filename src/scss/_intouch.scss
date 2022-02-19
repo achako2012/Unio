@@ -2,26 +2,65 @@
 
   &__intouch {
     background: #130645;
-    padding-top: 105px;
+    padding-bottom: 50px;
 
-    @media (max-width: $breakpoint768) {
-      padding-top: 25px;
-    }
+  }
+}
+
+.container {
 
 
-    .coin {
-      &__img {
-        position: relative;
-        width: 15%;
+  .coin {
+    &__img {
+      position: relative;
+      z-index: 0;
+      overflow: hidden !important;
 
-        &-1 {
-          transform: translate(50%, -60%);
-          top: -45em;
-          right: -60em;
+      @media (max-width: $breakpoint768) {
+        display: none;
+      }
+
+      &-1 {
+        max-width: 210px;
+        max-height: 210px;
+        top: 200px;
+        left: 80%;
+      }
+
+      &-2 {
+        max-width: 150px;
+        max-height: 150px;
+        top: 450px;
+        left: 0;
+
+        @media (max-width: $breakpoint992) {
+          display: none;
         }
       }
-    }
 
+      &-3 {
+        max-height: 120px;
+        top: 500px;
+        right: 450px;
+      }
+
+      &-4 {
+        max-height: 120px;
+        top: 820px;
+        right: 400px;
+      }
+
+      &-5 {
+        max-height: 140px;
+        left: 30%;
+        top: 750px;
+
+        @media (max-width: $breakpoint992) {
+          display: none;
+        }
+      }
+
+    }
   }
 }
 
@@ -42,7 +81,8 @@
     margin-top: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 5em;
     width: 100%;
 
     @media (max-width: $breakpoint768) {
