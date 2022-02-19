@@ -1,0 +1,110 @@
+footer {
+  background-color: #0C032E;
+
+  .footer {
+    color: white;
+
+    &__navigation {
+      display: flex;
+      justify-content: center;
+      padding: 55px 0;
+      width: 100%;
+      border-bottom: 2px solid rgba(65, 37, 182, 1);
+      align-items: flex-start;
+
+      &-first {
+        color: rgba(255, 255, 255, 0.5);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 125px;
+
+        @media (max-width: $breakpoint992) {
+          flex-direction: row;
+          gap:0;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        @media (max-width: $breakpoint480) {
+          flex-direction: column;
+          gap:10px;
+          align-items: center;
+        }
+
+        img {
+          display: block;
+          max-width: 126px;
+        }
+
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      &-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: $breakpoint992) {
+          display:none;
+        }
+
+        h3 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 20px;
+          line-height: 30px;
+          text-transform: uppercase;
+        }
+
+        ul {
+          margin-top: 24px;
+        }
+
+        li {
+          margin-top: 9px;
+        }
+
+        p {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    &__privacy {
+      display: flex;
+      padding-top: 24px;
+      padding-bottom: 30px;
+      gap: 12px;
+      justify-content: center;
+
+      @media (max-width: $breakpoint768) {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      @media (max-width: $breakpoint480) {
+        font-weight: normal;
+        font-size: 8px;
+        line-height: 12px;
+      }
+
+      .center {
+        border-left: 2px solid rgba(255, 255, 255, 0.5);
+        border-right: 2px solid rgba(255, 255, 255, 0.5);
+        padding: 0 12px;
+      }
+
+    }
+  }
+}
