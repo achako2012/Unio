@@ -5,6 +5,10 @@ nav {
   color: white;
   padding-top: 28px;
   padding-bottom: 19px;
+
+  @media (max-width: $breakpoint480) {
+    font-size: 12px;
+  }
 }
 
 .navbar {
@@ -20,7 +24,6 @@ nav {
 
   @media (max-width: $breakpoint480) {
     justify-content: center;
-    gap: 0;
   }
 }
 

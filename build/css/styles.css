@@ -209,6 +209,7 @@ nav {
 
 .main__controls-account {
   background: linear-gradient(180deg, #4125B6 0%, #7357EC 100%);
+  border: 3px solid #4125B6;
 }
 
 .main__controls-market {
@@ -1016,6 +1017,10 @@ footer .footer__privacy .center {
     padding-bottom: 120px;
   }
 
+  .main {
+    padding-left: 0;
+  }
+
   .main__title {
     font-size: 28px;
   }
@@ -1161,9 +1166,12 @@ footer .footer__privacy .center {
     max-width: none;
   }
 
+  nav {
+    font-size: 12px;
+  }
+
   .navbar {
     justify-content: center;
-    gap: 0;
   }
 
   .profile {

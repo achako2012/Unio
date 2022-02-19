@@ -26,6 +26,10 @@
 .main {
   padding-left: 12%;
 
+  @media (max-width: $breakpoint768) {
+    padding-left: 0;
+  }
+
   &__title {
     font-style: normal;
     font-weight: 600;
@@ -81,6 +85,7 @@
 
     &-account {
       background: linear-gradient(180deg, #4125B6 0%, #7357EC 100%);
+      border: 3px solid #4125B6
     }
 
     &-market {
