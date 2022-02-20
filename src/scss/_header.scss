@@ -45,6 +45,10 @@ nav {
     display: flex;
     align-items: center;
     gap: 4px;
+
+    @supports (-webkit-touch-callout: none) {
+      margin-right:10px;
+    }
   }
 
   &__item-link {
@@ -56,6 +60,10 @@ nav {
     height: 40px;
     border: 2px solid #4426B9;
     border-radius: 24px;
+
+    @supports (-webkit-touch-callout: none) {
+      margin-right:10px;
+    }
 
     &-icon {
       display: block;

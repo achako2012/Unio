@@ -81,6 +81,10 @@
       color: white;
       border-radius: 12px;
       padding: 12px 36px;
+
+      @supports (-webkit-touch-callout: none) {
+        margin-top:10px;
+      }
     }
 
     &-account {
@@ -92,7 +96,6 @@
       background: rgba(64, 36, 178, 0.3);
       border: 3px solid #4125B6
     }
-
   }
 }
 
